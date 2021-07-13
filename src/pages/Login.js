@@ -1,7 +1,8 @@
 import React from 'react';
+import Section from '../components/Section/Section';
 
 const Login = () => {
-  return <></>;
+  return <Section></Section>;
 };
 
 export default Login;
