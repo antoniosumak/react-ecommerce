@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   HeaderWrapper,
   HeaderInner,
@@ -10,10 +10,12 @@ import {
   ShoppingCart,
   Hamburger,
   HamburgerLine,
+  MobileMenu,
 } from './HeaderStyles';
 import logo from '../../assets/images/logo.png';
 
 const Header = () => {
+  const [opened, setOpened] = useState(false);
   const links = [
     { label: 'Shop', path: '/shop' },
     { label: 'Login', path: '/login' },
@@ -35,12 +37,19 @@ const Header = () => {
             ))}
           </InnerNav>
         </Nav>
-        <Hamburger>
-          <HamburgerLine />
-          <HamburgerLine />
-          <HamburgerLine />
+        <Hamburger onClick={() => setOpened(!opened)}>
+          <HamburgerLine opened={opened} />
+          <HamburgerLine opened={opened} />
+          <HamburgerLine opened={opened} />
         </Hamburger>
       </HeaderInner>
+      <MobileMenu visible={opened}>
+        {links.map((value, index) => (
+          <NavItems key={index} to={value.path}>
+            {value.label}
+          </NavItems>
+        ))}
+      </MobileMenu>
     </HeaderWrapper>
   );
 };
