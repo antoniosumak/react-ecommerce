@@ -29,7 +29,7 @@ export const Product = styled.h2`
 export const Price = styled.p`
   font-weight: bold;
   padding: 8px 0px;
-  padding-bottom: 32px;
+  padding-bottom: 16px;
   text-align: center;
 `;
 
@@ -46,4 +46,8 @@ export const Category = styled.p`
   margin: -20px;
   font-size: 20px;
   box-shadow: ${boxShadow};
+`;
+
+export const Quanty = styled.p`
+  padding: 8px;
 `;

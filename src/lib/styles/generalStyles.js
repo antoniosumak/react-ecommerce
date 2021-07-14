@@ -39,3 +39,29 @@ export const Button = styled.button`
     color: ${colors.white};
   }
 `;
+
+export const ButtonInput = styled.button`
+  background-color: ${colors.gray};
+  color: ${colors.white};
+  padding: 8px;
+  border: 1px solid ${colors.gray};
+  left: 50%;
+  transition: 0.3s ease-in-out;
+  border-radius: 10px;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+    border: 1px solid ${colors.white};
+    background-color: ${colors.black};
+    color: ${colors.white};
+  }
+`;
+
+export const Center = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px;
+`;
