@@ -25,7 +25,7 @@ export const products = [
   },
   {
     product: 'Airtag',
-    category: 'Other',
+    category: 'Location',
     price: '$20',
     quantity: '15',
     imageURL:
@@ -57,7 +57,7 @@ export const products = [
   },
   {
     product: 'Airtag',
-    category: 'Other',
+    category: 'Location',
     price: '$20',
     quantity: '15',
     imageURL:

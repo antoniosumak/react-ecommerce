@@ -26,6 +26,24 @@ export const Product = styled.h2`
   padding: 8px 0px;
 `;
 
-export const Price = styled.p``;
+export const Price = styled.p`
+  font-weight: bold;
+  padding: 8px 0px;
+  padding-bottom: 32px;
+  text-align: center;
+`;
 
-export const Category = styled.p``;
+export const Category = styled.p`
+  width: min-content;
+  background-color: ${colors.black};
+  color: ${colors.white};
+  height: 35px;
+  width: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 10px 10px 10px;
+  margin: -20px;
+  font-size: 20px;
+  box-shadow: ${boxShadow};
+`;
