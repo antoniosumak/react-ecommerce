@@ -141,8 +141,8 @@ export const MobileMenu = styled.div`
   height: calc(100% - 72px);
   margin-top: 72px;
   transition: 0.3s ease-in-out;
-  bottom: ${(p) => (p.visible ? '0px' : '-100%')};
-  right: 0;
+  right: ${(p) => (p.visible ? '0px' : '-100%')};
+  top: 0;
   z-index: 10;
   background-color: ${colors.black};
   text-transform: uppercase;
