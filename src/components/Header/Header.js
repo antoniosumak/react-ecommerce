@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
   HeaderWrapper,
   HeaderInner,
@@ -11,13 +11,18 @@ import {
   Hamburger,
   HamburgerLine,
   MobileMenu,
+  ItemsCounter,
+  CartSummary,
+  CartSummaryItems,
 } from './HeaderStyles';
 import logo from '../../assets/images/logo.png';
+import { CartItemsContext } from '../../context/CartItemsContext';
 
 const Header = () => {
   const [opened, setOpened] = useState(false);
+  const { cartItems } = useContext(CartItemsContext);
   const links = [
-    { label: 'Shop', path: '/shop' },
+    { label: 'Shop', path: '/' },
     { label: 'Login', path: '/login' },
     { label: <ShoppingCart />, path: '/cart' },
   ];
@@ -30,11 +35,22 @@ const Header = () => {
         </LogoContainer>
         <Nav>
           <InnerNav>
-            {links.map((value, index) => (
-              <NavItems key={index} to={value.path}>
-                {value.label}
-              </NavItems>
-            ))}
+            <NavItems exact to="/">
+              Shop
+            </NavItems>
+            <NavItems to="/login">Login</NavItems>
+            <NavItems to="cart">
+              <ItemsCounter>{cartItems && cartItems.length}</ItemsCounter>
+              <ShoppingCart />
+              <CartSummary>
+                {cartItems &&
+                  cartItems.map((value, index) => (
+                    <CartSummaryItems key={index}>
+                      {value.product}
+                    </CartSummaryItems>
+                  ))}
+              </CartSummary>
+            </NavItems>
           </InnerNav>
         </Nav>
         <Hamburger onClick={() => setOpened(!opened)}>

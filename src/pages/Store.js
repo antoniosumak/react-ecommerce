@@ -8,7 +8,8 @@ const Store = () => {
   return (
     <Section>
       <Grid>
-        {products && products.map((data) => <StoreItem data={data} />)}
+        {products &&
+          products.map((data, index) => <StoreItem key={index} data={data} />)}
       </Grid>
     </Section>
   );

@@ -66,29 +66,26 @@ export const NavItems = styled(NavLink)`
     font-size: 16px;
     color: ${colors.black};
 
-    &:before {
-      content: '';
-      width: 0%;
-      transition: 0.3s ease-in-out;
-    }
-    &:hover {
-      cursor: pointer;
+    &:not(:last-child) {
       &:before {
         content: '';
-        position: absolute;
-        display: block;
-        bottom: -10px;
-        background: ${colors.red};
-        height: 4px;
-        width: 100%;
+        width: 0%;
+        transition: 0.3s ease-in-out;
+      }
+      &:hover {
+        cursor: pointer;
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          bottom: -10px;
+          background: ${colors.red};
+          height: 4px;
+          width: 100%;
+        }
       }
     }
   }
-`;
-
-export const ShoppingCart = styled(FaShoppingCart)`
-  font-size: 24px;
-  color: ${colors.red};
 `;
 
 export const Hamburger = styled.div`
@@ -149,5 +146,50 @@ export const MobileMenu = styled.div`
 
   @media screen and (${breakpoints.tablet}) {
     display: none;
+  }
+`;
+
+export const ItemsCounter = styled.p`
+  position: absolute;
+  color: white;
+  top: 0px;
+  right: -18px;
+  width: 28px;
+  height: 28px;
+  background-color: ${colors.red};
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ShoppingCart = styled(FaShoppingCart)`
+  position: relative;
+  font-size: 24px;
+  color: ${colors.red};
+`;
+
+export const CartSummary = styled.div`
+  padding: 20px;
+  position: absolute;
+  right: 0;
+  bottom: -80px;
+  min-height: 100px;
+  width: 300px;
+  background-color: white;
+  box-shadow: ${boxShadow};
+  transition: 0.3s ease-in-out;
+  display: none;
+  ${NavItems}:hover & {
+    display: flex;
+    flex-direction: column;
+  }
+`;
+
+export const CartSummaryItems = styled.p`
+  display: none;
+
+  ${NavItems}:hover & {
+    display: block;
   }
 `;
