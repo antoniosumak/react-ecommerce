@@ -164,19 +164,24 @@ export const ItemsCounter = styled.p`
 `;
 
 export const ShoppingCart = styled(FaShoppingCart)`
-  position: relative;
   font-size: 24px;
   color: ${colors.red};
 `;
 
+export const Alltogether = styled.div`
+  position: relative;
+`;
+
 export const CartSummary = styled.div`
   padding: 20px;
+  height: min-content;
   position: absolute;
   right: 0;
-  bottom: -80px;
-  min-height: 100px;
-  width: 300px;
+  top: 32px;
+  bottom: -40px;
+  width: 400px;
   background-color: white;
+  z-index: 20;
   box-shadow: ${boxShadow};
   transition: 0.3s ease-in-out;
   display: none;
@@ -186,10 +191,38 @@ export const CartSummary = styled.div`
   }
 `;
 
-export const CartSummaryItems = styled.p`
-  display: none;
+export const CartSummaryRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 20px;
+  align-items: center;
+  border-bottom: 1px solid ${colors.gray};
+  padding: 12px 0px;
 
-  ${NavItems}:hover & {
-    display: block;
+  &:first-child {
+    border-bottom: none;
   }
 `;
+
+export const CartSummaryItems = styled.p`
+  display: none;
+  font-weight: normal;
+  ${NavItems}:hover & {
+    display: flex;
+  }
+`;
+
+export const MiniImage = styled.img`
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+`;
+
+export const CartTotal = styled.div`
+  padding: 16px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+export const CartTotalValues = styled.p``;
