@@ -27,13 +27,15 @@ const Header = () => {
   const [opened, setOpened] = useState(false);
   const { cartItems } = useContext(CartItemsContext);
 
-  const cartTotal = cartItems
-    .map((value) => {
-      return value.price * value.quantity;
-    })
-    .reduce((sum, currentValue) => {
-      return (sum += currentValue);
-    });
+  const cartTotal =
+    cartItems.length > 0 &&
+    cartItems
+      .map((value) => {
+        return value.price * value.quantity;
+      })
+      .reduce((sum, currentValue) => {
+        return (sum += currentValue);
+      });
 
   const links = [
     { label: 'Shop', path: '/' },

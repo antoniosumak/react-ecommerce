@@ -17,10 +17,9 @@ export const HeaderInner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 40px;
+  padding: 0px 20px;
 
   @media screen and (${breakpoints.tablet}) {
-    padding: 0 40px;
   }
   @media screen and (${breakpoints.desktop}) {
     max-width: 944px;
